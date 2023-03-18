@@ -1,12 +1,27 @@
+import axios from 'axios'
+
 import Input from "@/components/input";
 import { SetStateAction, useState } from "react";
 
 export default function Auth() {
     const [email, setEmail] = useState('')
-    const [passowrd, setPassowrd] = useState('')
-    const [username, setUserName] = useState('')
+    const [password, setPassowrd] = useState('')
+    const [name, setUserName] = useState('')
 
     const [toggleLoginSignup, setToggleLoginSignup] = useState(true)
+
+
+    async function register() {
+        try {
+            await axios.post('/api/register', {
+                email,
+                name,
+                password
+            })
+        } catch (err) {
+            console.log(err)
+        }
+    }
 
     return (
         <section className="relative h-full w-full bg-[url('/imgs/hero.jpg')] bg-no-repeat bg-center bg-fixed bg-cover">
@@ -23,10 +38,10 @@ export default function Auth() {
                         <div className="flex flex-col gap-4">
                             <Input
                                 label="Username"
-                                id="username"
+                                id="name"
                                 type="text"
                                 onChange={(ev: { target: { value: SetStateAction<string> } }) => setUserName(ev.target.value)}
-                                value={username}
+                                value={name}
                             />
                             {!toggleLoginSignup && <Input
                                 label="Email"
@@ -40,10 +55,10 @@ export default function Auth() {
                                 id="password"
                                 type="password"
                                 onChange={(ev: any) => setPassowrd(ev.target.value)}
-                                value={passowrd}
+                                value={password}
                             />
                         </div>
-                        <button className="bg-red-600 py-3 text-white rounded-md w-full mt-10 hover:bg-red-700 transition">
+                        <button onClick={register} className="bg-red-600 py-3 text-white rounded-md w-full mt-10 hover:bg-red-700 transition">
                             {toggleLoginSignup ? 'Login' : 'Sign up'}
                         </button>
                         <p className="text-neutral-500 mt-12">
