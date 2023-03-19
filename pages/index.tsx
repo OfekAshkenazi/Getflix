@@ -1,3 +1,4 @@
+import BillBoard from '@/components/billboard'
 import Navbar from '@/components/navbar'
 import { NextPageContext } from 'next'
 import { getSession } from 'next-auth/react'
@@ -21,6 +22,7 @@ export default function Home() {
   return (
     <section>
       <Navbar />
+      <BillBoard />
     </section>
   )
 }
