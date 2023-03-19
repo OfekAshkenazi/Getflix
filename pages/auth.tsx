@@ -1,20 +1,35 @@
 import axios from 'axios'
-import { SetStateAction, useCallback, useState } from "react";
+import { SetStateAction, useState, useCallback } from "react";
 
 import Input from "@/components/input";
-import { signIn, signOut } from 'next-auth/react';
 import { useRouter } from 'next/router';
 
 import { FcGoogle } from 'react-icons/fc'
 import { FaGithub } from 'react-icons/fa'
+import { signIn } from 'next-auth/react';
 
 export default function Auth() {
+
     const [email, setEmail] = useState('')
     const [password, setPassowrd] = useState('')
     const [name, setUserName] = useState('')
+
     const router = useRouter()
+
     const [toggleLoginSignup, setToggleLoginSignup] = useState(true)
 
+    async function login() {
+        try {
+            await signIn('credentials', {
+                email,
+                password,
+                callbackUrl: '/profiels'
+            })
+        } catch (err) {
+            console.log(err)
+        }
+
+    }
 
     async function register() {
         try {
@@ -23,21 +38,7 @@ export default function Auth() {
                 name,
                 password
             })
-            logIn()
-        } catch (err) {
-            console.log(err)
-        }
-    }
-
-    async function logIn() {
-        try {
-            await signIn('credentials', {
-                email,
-                password,
-                redirect: false,
-                callbackUrl: '/'
-            })
-            router.push('/')
+            login()
         } catch (err) {
             console.log(err)
         }
@@ -86,16 +87,14 @@ export default function Auth() {
                             />
                         </div>
 
-                        <button onClick={toggleLoginSignup ? logIn : register} className="bg-red-600 py-3 text-white rounded-md w-full mt-10 hover:bg-red-700 transition">
+                        <button onClick={() => toggleLoginSignup ? login() : register()} className="bg-red-600 py-3 text-white rounded-md w-full mt-10 hover:bg-red-700 transition">
                             {toggleLoginSignup ? 'Login' : 'Sign up'}
                         </button>
 
-                        <div
-                            className="flex flex-row items-center gap-4 mt-8 justify-center"
-                        >
+                        <div className="flex flex-row items-center gap-4 mt-8 justify-center">
                             <div
-                            onClick={() => signIn('google', { callbackUrl: '/' })}
-                            className="
+                                onClick={() => signIn('google', { callbackUrl: '/profiels' })}
+                                className="
                             w-10 
                             h-10
                           bg-white
@@ -109,7 +108,7 @@ export default function Auth() {
                                 <FcGoogle size={30} />
                             </div>
                             <div
-                                onClick={() => signIn('github', { callbackUrl: '/' })}
+                                onClick={() => signIn('github', { callbackUrl: '/profiels' })}
                                 className="
                                w-10
                                h-10
