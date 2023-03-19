@@ -1,8 +1,7 @@
 import axios from 'axios'
-import { SetStateAction, useState, useCallback } from "react";
+import { SetStateAction, useState } from "react";
 
 import Input from "@/components/input";
-import { useRouter } from 'next/router';
 
 import { FcGoogle } from 'react-icons/fc'
 import { FaGithub } from 'react-icons/fa'
@@ -14,7 +13,6 @@ export default function Auth() {
     const [password, setPassowrd] = useState('')
     const [name, setUserName] = useState('')
 
-    const router = useRouter()
 
     const [toggleLoginSignup, setToggleLoginSignup] = useState(true)
 
