@@ -1,4 +1,5 @@
 import { BsFillPlayFill } from 'react-icons/bs'
+import WishlistBtn from './wishlistBtn'
 
 
 interface MovieCardProps {
@@ -50,6 +51,7 @@ export function MovieCardPreview({ data }: MovieCardProps) {
 
                             <BsFillPlayFill size={30} className=" ml-1" />
                         </div>
+                        <WishlistBtn movieId={data?.id} />
 
                     </div>
 
