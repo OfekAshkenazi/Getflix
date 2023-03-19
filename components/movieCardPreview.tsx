@@ -5,11 +5,7 @@ interface MovieCardProps {
     data: Record<string, any>
 }
 
-
-
 export function MovieCardPreview({ data }: MovieCardProps) {
-
-
 
     return (
         <article className="group bg-zinc-900 col-span relative h-[-12vw] ">
