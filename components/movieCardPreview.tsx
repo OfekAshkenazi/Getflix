@@ -18,7 +18,6 @@ export function MovieCardPreview({ data }: MovieCardProps) {
         openModal(data?.id)
     }
 
-
     return (
         <article className="group bg-zinc-900 col-span relative h-12/100">
 
