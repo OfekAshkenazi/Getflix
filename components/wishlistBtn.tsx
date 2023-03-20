@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useCallback, useMemo } from 'react'
+import React, { useMemo } from 'react'
 import { AiOutlinePlus } from 'react-icons/ai'
 import { AiOutlineCheck } from 'react-icons/ai'
 import useCurrentUser from "@/hooks/useCurrentUser";
@@ -18,8 +18,6 @@ export default function WishlistBtn({ movieId }: WishListProps) {
         const list = currUser?.favoriteMovies || []
         return list.includes(movieId)
     }, [currUser, movieId])
-
-
 
     async function toggleWishlist() {
         let res
@@ -40,8 +38,6 @@ export default function WishlistBtn({ movieId }: WishListProps) {
         mutateWishlist()
     }
 
-
-
     const Icon = isInWishList ? AiOutlineCheck : AiOutlinePlus
 
     return (
@@ -51,22 +47,3 @@ export default function WishlistBtn({ movieId }: WishListProps) {
     )
 }
 
-
-
-// const toggleWishlist = useCallback(async () => {
-//     let res
-//     if (isInWishList) {
-//         res = await axios.delete('/api/wishlist', { data: movieId })
-//     } else {
-//         res = await axios.post('/api/wishlist', { movieId })
-
-//     }
-//     const updatedWishlist = res?.data?.favoriteMovies
-
-//     mutate({
-//         ...currUser,
-//         favoriteMovies: updatedWishlist
-//     })
-
-//     mutateWishlist()
-// }, [movieId, isInWishList, currUser, mutate, mutateWishlist])
