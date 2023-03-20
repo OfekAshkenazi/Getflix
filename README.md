@@ -1,4 +1,21 @@
-This is a [Next.js](https://nextjs.org/) project [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Screenshots
+
+## Hero 
+The home page
+![Hero](public/imgs/hero-area.png)
+
+### Entring modal
+
+<img src="public/imgs/log-in.png" width="50%" style="float: left"/><img src="public/imgs/sign-in.png" width="50%" style="float: left; hight: '150px';"/>
+
+## Movie night
+![MovieNight](public/imgs/movie-state.png)
+
+## Trending now
+![Trending](public/imgs/trending-now.png)
+
+## Movie details
+![Movie](public/imgs/movie-details.png)
 
 ## Technologies
 - React
@@ -14,27 +31,6 @@ This is a [Next.js](https://nextjs.org/) project [`create-next-app`](https://git
 - Tailwindcss
 This is my first time useing it and it is very nice freamwork for easy styling your app.
 its work good with the extension
-
-## Screenshots
-
-## Hero 
-The home page
-![Hero](imgs/hero-area.png)
-
-### Entring modal
-
-<img src="public/imgs/log-in.png" width="50%" style="float: left"/><img src="public/imgs/sign-in.png" width="50%" style="float: left;"/>
-
-## Movie night
-![MovieNight](imgs/movie-state.png)
-
-## Trending now
-![Trending](imgs/trending-now.png)
-
-## Movie details
-![Movie](imgs/movie-details.png)
-
-
 
 ## Getting Started
 
