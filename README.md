@@ -8,7 +8,7 @@ The home page
 
 <img src="public/imgs/log-in.png" width="50%" style="float: left"/><img src="public/imgs/sign-in.png" width="50%" style="float: left; hight: '150px';"/>
 
-## Movie night
+## Movie
 ![MovieNight](public/imgs/movie-state.png)
 
 ## Trending now && Movie details
