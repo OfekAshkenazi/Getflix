@@ -23,7 +23,7 @@ The home page
 
 ### Entring modal
 
-<img src="imgs/log-in.png" width="50%" style="float: left"/><img src="imgs/sign-in.png" width="50%" style="float: left;"/>
+<img src="public/imgs/log-in.png" width="50%" style="float: left"/><img src="public/imgs/sign-in.png" width="50%" style="float: left;"/>
 
 ## Movie night
 ![MovieNight](imgs/movie-state.png)
