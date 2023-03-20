@@ -25,8 +25,9 @@ The home page
 - Zustand (for mini store)
 
 ## Styling
-- Tailwindcss
-This is my first time useing it and it is very nice freamwork for easy styling your app.
+- Tailwindcss - 
+
+This is my first time using it and it is very nice framework for easy styling your app.
 its work good with the extension
 
 ## Getting Started
@@ -41,6 +42,8 @@ pnpm dev
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start by sign-in with email and password and username.
+
+You can chack the website here: (https://getflix-sigma.vercel.app/)
 
 ## Author
 - [@Ofek Ashkenazi](https://github.com/OfekAshkenazi/)
