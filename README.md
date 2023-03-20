@@ -11,11 +11,8 @@ The home page
 ## Movie night
 ![MovieNight](public/imgs/movie-state.png)
 
-## Trending now
-![Trending](public/imgs/trending-now.png)
-
-## Movie details
-![Movie](public/imgs/movie-details.png)
+## Trending now && Movie details
+<img src="public/imgs/movie-details.png" width="50%" style="float: left"/><img src="public/imgs/trending-now.png" width="50%" style="float: left; hight: '150px';"/>
 
 ## Technologies
 - React
