@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router'
 import { BsFillPlayFill } from 'react-icons/bs'
 import WishlistBtn from './wishlistBtn'
 
@@ -7,7 +8,7 @@ interface MovieCardProps {
 }
 
 export function MovieCardPreview({ data }: MovieCardProps) {
-
+    const router = useRouter()
     return (
         <article className="group bg-zinc-900 col-span relative h-[-12vw] ">
 
@@ -33,7 +34,7 @@ export function MovieCardPreview({ data }: MovieCardProps) {
                     <div className="flex flex-row itmes-center gap-3">
 
 
-                        <div onClick={() => { }} className="
+                        <div onClick={() => router.push(`/watch/${data?.id}`)} className="
                          cursor-pointer
                          w-6
                          h-6
