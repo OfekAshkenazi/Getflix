@@ -23,7 +23,7 @@ The home page
 - Bcrypt
 - SWR
 - Zustand (for mini store)
-- 
+
 ## Styling
 - Tailwindcss
 This is my first time useing it and it is very nice freamwork for easy styling your app.
