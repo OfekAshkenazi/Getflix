@@ -42,6 +42,18 @@ export default function Auth() {
         }
     }
 
+    async function logGuest() {
+        try {
+            await signIn('credentials', {
+                email: "Guest@gmail.com",
+                password: 123,
+                callbackUrl: '/profiels'
+            })
+        } catch (err) {
+            console.log(err)
+        }
+    }
+
     return (
         <section className="relative h-full w-full bg-[url('/imgs/hero.jpg')] bg-no-repeat bg-center bg-fixed bg-cover">
 
@@ -88,6 +100,10 @@ export default function Auth() {
                         <button onClick={() => toggleLoginSignup ? login() : register()} className="bg-red-600 py-3 text-white rounded-md w-full mt-10 hover:bg-red-700 transition">
                             {toggleLoginSignup ? 'Login' : 'Sign up'}
                         </button>
+
+                        {toggleLoginSignup && <button onClick={logGuest} className="bg-red-600 py-3 text-white rounded-md w-full mt-10 hover:bg-red-700 transition">
+                            Log In As Gust
+                        </button>}
 
                         <div className="flex flex-row items-center gap-4 mt-8 justify-center">
                             <div
